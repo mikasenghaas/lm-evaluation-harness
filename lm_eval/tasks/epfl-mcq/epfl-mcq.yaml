@@ -1,0 +1,21 @@
+task: epfl-mcq
+dataset_path: cs552-mlp/epfl-mcq
+dataset_name: null
+output_type: multiple_choice
+training_split: null
+validation_split: null
+test_split: train
+fewshot_split: train
+process_docs: !function utils.process_docs
+doc_to_text: "Question: {{question}}\nInput:\n{{options}}\nAnswer:"
+doc_to_target: answer
+doc_to_choice: choices
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0
