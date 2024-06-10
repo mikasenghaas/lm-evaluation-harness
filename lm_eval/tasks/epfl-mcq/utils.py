@@ -30,7 +30,6 @@ def process_docs(dataset: Dataset):
             "choices": options,
             "answer": answer,
         }
-        print(doc)
         return doc
 
     return dataset.map(_helper)
